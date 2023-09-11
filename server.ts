@@ -10,7 +10,7 @@ const hostname = process.env.APP_HOSTNAME || 'localhost';
 const port = 3000;
 
 const nextApp = next({
-  dev: !!process.env.DEV,
+  dev,
   hostname,
   port,
 });
@@ -36,6 +36,6 @@ nextApp.prepare().then(() => {
   // Start the server on the given port
   const server = app.listen(port, hostname);
   server.on('listening', () =>
-    console.log(`Experimentation Hub started at http:/${hostname}:${port}`)
+    console.log(`Started at http:/${hostname}:${port}`)
   );
 });
