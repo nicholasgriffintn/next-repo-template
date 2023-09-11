@@ -1,5 +1,4 @@
-import { createServer } from 'http';
-import { parse } from 'url';
+import crypto from 'crypto';
 import next from 'next';
 import express from 'express';
 
@@ -18,7 +17,8 @@ const nextApp = next({
 const nextHandler = nextApp.getRequestHandler();
 
 const nonceMiddleware = (req, res, next) => {
-  res.locals.nonce = 'test';
+  const nonce = crypto.randomBytes(16).toString('hex');
+  res.locals.nonce = nonce;
 
   next();
 };
