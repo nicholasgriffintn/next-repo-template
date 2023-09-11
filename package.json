@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=production node dist/server.js"
   },
   "stackblitz": {
-    "startCommand": "npm install && npm run dev"
+    "startCommand": "npm run dev"
   },
   "dependencies": {
     "express": "4.18.2",
