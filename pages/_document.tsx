@@ -6,6 +6,8 @@ class MyDocument extends Document {
 
     const { nonce } = ctx?.res?.locals || {};
 
+    console.log('NONCE', nonce);
+
     return { ...initialProps, nonce };
   }
 

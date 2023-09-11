@@ -1,5 +1,5 @@
 function App({ Component, pageProps }) {
-  console.log(pageProps);
+  console.log('PAGE PROPS', pageProps);
 
   return (
     <>

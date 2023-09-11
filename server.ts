@@ -17,9 +17,15 @@ const nextApp = next({
 });
 const nextHandler = nextApp.getRequestHandler();
 
+const nonceMiddleware = (req, res, next) => {
+  res.locals.nonce = 'test';
+
+  next();
+};
+
 const routes = (app, nextHandler) => {
   // Catch All
-  app.get('*', nextHandler);
+  app.get('*', nonceMiddleware, nextHandler);
 
   return app;
 };
