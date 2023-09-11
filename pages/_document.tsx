@@ -6,19 +6,18 @@ class MyDocument extends Document {
 
     const { nonce } = ctx?.res?.locals || {};
 
-    console.log('NONCE', nonce);
-
     return { ...initialProps, nonce };
   }
 
   render() {
     const { nonce } = this.props as unknown as { nonce: string };
 
+    console.log('NONCE', nonce);
+
     return (
       <Html lang="en-GB">
-        <Head nonce={nonce} />
+        <Head />
         <body data-theme="dark">
-          <script nonce={nonce} dangerouslySetInnerHTML={{ __html: '' }} />
           <Main />
           <NextScript nonce={nonce} />
         </body>
