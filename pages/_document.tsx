@@ -16,7 +16,7 @@ class MyDocument extends Document {
 
     return (
       <Html lang="en-GB">
-        <Head />
+        <Head nonce={nonce} />
         <body data-theme="dark">
           <Main />
           <NextScript nonce={nonce} />
