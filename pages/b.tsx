@@ -5,7 +5,7 @@ export default function B() {
     <div>
       <Link href="/">home</Link>
       <br />
-      Page A
+      Page B
     </div>
   );
 }
