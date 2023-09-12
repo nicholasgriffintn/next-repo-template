@@ -9,7 +9,9 @@ const nonceMiddleware = (req, res, next) => {
 
 const routes = (app, nextHandler) => {
   // Catch All
-  app.get('*', nonceMiddleware, nextHandler);
+  app.get("*", nonceMiddleware, (req, res) => {
+    nextHandler(req, res);
+  });
 
   return app;
 };
